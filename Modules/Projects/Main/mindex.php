@@ -18,7 +18,7 @@ if ($seriesList !== false && sizeof($seriesList) > 0){
 
 ?>
 
-<span style="font-style:italic; font-size:10pt;">Click on a title to edit the series</span><br>
+<span style="font-style:italic; font-size:10pt;">Click on a title to view the series</span><br>
 <table id="projectList" class="list">
 <tr class="projectListRow">
 	<th class="projectTitle">Project Title</th>

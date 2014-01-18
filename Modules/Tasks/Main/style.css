@@ -1,15 +1,14 @@
 .project-block {
 	display:block;
+	margin:15px;
 	width:600px;
 	background-color:#ededed;
 	border:2px solid lightgrey;
 	border-bottom:none;
-	float:left;
 }
-.project-title {
-	width:100%;
-	font-weight:bold;
+.title-div {
 	font-size:16pt;
+	font-family:Ubuntu;
 	border-bottom:2px solid lightgrey;
 }
 .chapter-block {

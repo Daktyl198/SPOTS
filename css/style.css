@@ -47,7 +47,7 @@ table {
 tr {
 	height:35px;
 }
-th {
+th, .title-div {
 	color:white;
 	background-color:#0099cc;
 	padding-left:3px;
