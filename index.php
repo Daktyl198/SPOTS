@@ -35,17 +35,15 @@ DEFINE('moduleDir', './Modules/'.$action.'/'.$sub);
 
 require_once(spotsIndex.'/header.php');
 
-$sidebar = actionDir.'/sidebar.php';
-$mindex = moduleDir.'/mindex.php';
-
-if (!file_exists($mindex)) {
-	echo '<div id="module" style="margin-left:0px;">';
-	echo '<div style="margin-top:50px;">This page does not exist!</div>';
+$sidebarFix = '';
+if (!include_once(actionDir.'/sidebar.php')) {
+	$sidebarFix = ' style="margin-left:0px;"';
 }
-else {
-	include_once($sidebar);
-	echo '<div id="module">';
-	include_once($mindex);
+
+echo '<div id="module" '.$sidebarFix.'">';
+
+if (!include_once(moduleDir.'/mindex.php')) {
+	echo '<div style="margin-top:50px;">This page does not exist!</div>';
 }
 
 echo '</div>';
