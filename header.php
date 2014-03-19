@@ -18,7 +18,6 @@
 		<a class="header_nav" href="index.php?action=Tasks">Tasks</a>
 		<a class="header_nav" href="index.php?action=Projects">Projects</a>
 		<a class="header_nav" href="index.php?action=Members">Members</a>
-		<a class="header_nav" href="index.php?action=Groups">Groups</a>
 		<a class="header_nav" href="index.php?action=Settings">Settings</a>
 	</nav>
     <span id="header_user">Guest</span>

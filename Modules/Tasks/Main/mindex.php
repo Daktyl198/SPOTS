@@ -64,14 +64,21 @@ if ($statusSearch != 'All'){
 
 <div class="project-block">
 	<div class="title-div">Shurabura!</div>
+	<div class="chapter-block">
+		<div class="chapter-number">Ch. #</div>
+		<div class="task">Tasks assigned to you</div>
+		<br />
+	</div>
 	
 	<div class="chapter-block">
-		<span class="chapter-number">Ch.1</span>
-		<span class="task">Cleaning</span>
+		<div class="chapter-number">Ch.1</div>
+		<div class="task">Cleaning</div>
+		<br />
 	</div>
 	<div class="chapter-block">
-		<span class="chapter-number">Ch.2</span>
-		<span class="task">Proofreading</span>
+		<div class="chapter-number">Ch.2</div>
+		<div class="task">Proofreading</div>
+		<br />
 	</div>
 </div>
 

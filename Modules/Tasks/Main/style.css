@@ -17,7 +17,14 @@
 	border-bottom:2px solid lightgrey;
 }
 .chapter-number {
-	width:50px;
+	width:80px;
+	float:left;
+	display:inline-table;
 	text-align:center;
 	border-right:2px solid lightgrey;
+}
+.task {
+	float:left;
+	width:100%;
+	display:inline-table;
 }

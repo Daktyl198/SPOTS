@@ -20,8 +20,6 @@
 html, body {
 	margin:0px;
 	background-color:#f8f8f8;
-	text-rendering:optimizeLegibility;
-	image-rendering:optimizeSpeed;
 	width:100%;
 	font-family:Ubuntu Light;
 }

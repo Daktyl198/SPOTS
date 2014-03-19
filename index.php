@@ -1,7 +1,8 @@
 <?php
 
 DEFINE('fromIndex', TRUE);
-DEFINE('databaseDir', dirname(__FILE__).'/Database/');
+DEFINE('spotsIndex', dirname(__FILE__));
+DEFINE('databaseDir', spotsIndex.'/Database/');
 
 require_once(databaseDir.'Connection.php');
 global $connection;
@@ -32,26 +33,21 @@ if (!isset($_GET['action'])) {
 DEFINE('actionDir', './Modules/'.$action);
 DEFINE('moduleDir', './Modules/'.$action.'/'.$sub);
 
-require_once(databaseDir.'Connection.php');
-global $connection;
-if ($connection === null || !mysqli_ping($connection)){
-	connect();
-}
-
-require_once('./header.php');
+require_once(spotsIndex.'/header.php');
 
 $sidebar = actionDir.'/sidebar.php';
-if (!file_exists($sidebar) || !include_once($sidebar)){
-	$marginFix = ' style="margin-left:0px;"';
-}else {
-	$marginFix = '';
-}
-
-echo '<div id="module"'.$marginFix.'>';
 $mindex = moduleDir.'/mindex.php';
-if (!include_once($mindex)) {
+
+if (!file_exists($mindex)) {
+	echo '<div id="module" style="margin-left:0px;">';
 	echo '<div style="margin-top:50px;">This page does not exist!</div>';
 }
+else {
+	include_once($sidebar);
+	echo '<div id="module">';
+	include_once($mindex);
+}
+
 echo '</div>';
 
 require_once('./footer.html');
