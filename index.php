@@ -26,8 +26,15 @@ if (!isset($_GET['action'])) {
 	$action = 'Tasks';
 	$sub = 'Main';
 } else {
-	$action = str_replace('\0', '', $_GET['action']);
-	$sub = isset($_GET['sub']) ? str_replace('\0', '', $_GET['sub']) : 'Main';
+	// This is going to need a nicer/cleaner alternative in the future...
+	if (strpos($_GET['action'], './') || strpos($_GET['action'], '../') || strpos($_GET['sub'], './') || strpos($_GET['sub'], '../')) {
+		$subDirAttempt = TRUE;
+	}
+	else {
+		$action = str_replace('\0', '', $_GET['action']);
+		$sub = isset($_GET['sub']) ? str_replace('\0', '', $_GET['sub']) : 'Main';
+		$subDirAttempt = FALSE;
+	}
 }
 
 DEFINE('actionDir', './Modules/'.$action);
@@ -42,12 +49,26 @@ if (!include_once(actionDir.'/sidebar.php')) {
 
 echo '<div id="module" '.$sidebarFix.'">';
 
-if (!include_once(moduleDir.'/mindex.php')) {
+if ($subDirAttempt || !include_once(moduleDir.'/index.php')) {
 	echo '<div style="margin-top:50px;">This page does not exist!</div>';
 }
 
 echo '</div>';
 
-require_once('./footer.html');
-
 ?>
+
+<script type="text/javascript">
+function downloadJSAtOnload() {
+var element = document.createElement("script");
+element.src = "js/index.js";
+document.body.appendChild(element);
+}
+if (window.addEventListener)
+window.addEventListener("load", downloadJSAtOnload, false);
+else if (window.attachEvent)
+window.attachEvent("onload", downloadJSAtOnload);
+else window.onload = downloadJSAtOnload;
+</script>
+
+</body>
+</html>
